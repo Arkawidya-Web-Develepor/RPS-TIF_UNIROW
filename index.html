@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repositori RPS OBE - Teknik Informatika UNIROW</title>
+    <meta name="description" content="Repositori Rencana Pembelajaran Semester (RPS) Berbasis Outcome-Based Education (OBE) KPT UNIROW Program Studi Teknik Informatika">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#0284c7',
+                            600: '#0265d6',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & Lucide Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-sky-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 glass-card border-b border-slate-800/80 bg-slate-950/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-blue-700 flex items-center justify-center font-bold text-xl shadow-lg shadow-sky-500/20">
+                    <i data-lucide="book-open" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold text-white tracking-tight">RPS-TIF UNIROW</h1>
+                    <p class="text-xs text-slate-400">Teknik Informatika - Universitas PGRI Ronggolawe</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    OBE APTIKOM 2024
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-12 md:py-16 overflow-hidden border-b border-slate-800/60">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-900/20 via-slate-950 to-slate-950"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="px-4 py-1.5 rounded-full text-xs font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/20 inline-block mb-4">
+                Kurikulum Merdeka / KPT 2024
+            </span>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight max-w-3xl mx-auto leading-tight">
+                Repositori Rencana Pembelajaran Semester <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-blue-500">(RPS)</span>
+            </h2>
+            <p class="mt-4 text-slate-400 max-w-2xl mx-auto text-sm md:text-base">
+                Dokumen RPS Kurikulum Berbasis Capaian Pembelajaran (OBE) Program Studi Teknik Informatika, Fakultas Teknik, Universitas PGRI Ronggolawe Tuban.
+            </p>
+
+            <!-- Search & Quick Stats -->
+            <div class="mt-8 max-w-2xl mx-auto">
+                <div class="relative">
+                    <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
+                    <input type="text" id="searchInput" placeholder="Cari Mata Kuliah atau Kode MK (misal: Pemrograman Web, IF440624)..." 
+                        class="w-full pl-12 pr-4 py-3.5 bg-slate-900/90 border border-slate-700/80 rounded-2xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 transition-all text-sm">
+                </div>
+            </div>
+
+            <div class="mt-8 flex flex-wrap justify-center gap-6 text-center">
+                <div class="px-5 py-3 rounded-2xl bg-slate-900/50 border border-slate-800">
+                    <p class="text-2xl font-bold text-sky-400">8</p>
+                    <p class="text-xs text-slate-400">Semester</p>
+                </div>
+                <div class="px-5 py-3 rounded-2xl bg-slate-900/50 border border-slate-800">
+                    <p class="text-2xl font-bold text-blue-400" id="totalCoursesCount">50+</p>
+                    <p class="text-xs text-slate-400">Mata Kuliah Dokumen RPS</p>
+                </div>
+                <div class="px-5 py-3 rounded-2xl bg-slate-900/50 border border-slate-800">
+                    <p class="text-2xl font-bold text-emerald-400">.DOCX</p>
+                    <p class="text-xs text-slate-400">Format Resmi KPT</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full">
+        <!-- Semester Filter Tabs -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-4 scrollbar-none border-b border-slate-800/80 mb-8" id="semesterTabs">
+            <button onclick="filterSemester('all')" class="sem-btn active px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-sky-500 text-white shadow-lg shadow-sky-500/25">
+                Semua Semester
+            </button>
+            <!-- Generated dynamically -->
+        </div>
+
+        <!-- Course Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="coursesGrid">
+            <!-- Cards populated dynamically -->
+        </div>
+
+        <div id="noResults" class="hidden text-center py-16">
+            <i data-lucide="file-x" class="w-12 h-12 text-slate-600 mx-auto mb-3"></i>
+            <h3 class="text-slate-300 font-semibold">Mata kuliah tidak ditemukan</h3>
+            <p class="text-slate-500 text-sm mt-1">Coba kata kunci pencarian lain atau pilih semester yang sesuai.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 bg-slate-950 py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:flex md:justify-between md:items-center">
+            <p class="text-xs text-slate-500">
+                &copy; 2026 Program Studi Teknik Informatika - Universitas PGRI Ronggolawe Tuban. All rights reserved.
+            </p>
+            <p class="text-xs text-slate-600 mt-2 md:mt-0">
+                Dikembangkan dengan Skill <code class="text-sky-400 font-mono">rps-obe-unirow</code>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Data Script -->
+    <script>
+        const semestersData = [
+  {
+    "semester": "Semester 1",
+    "sem_num": 1,
+    "courses": [
+      { "code": "IF1124", "name": "Pendidikan Agama", "file": "Semester 1/IF1124/IF1124-Pendidikan Agama.docx" },
+      { "code": "IF1224", "name": "Pancasila", "file": "Semester 1/IF1224/IF1224-Pancasila.docx" },
+      { "code": "IF1324", "name": "Matematika Diskrit", "file": "Semester 1/IF1324/IF1324-Matematika Diskrit.docx" },
+      { "code": "IF1424", "name": "Algoritma Pemrograman", "file": "Semester 1/IF1424/IF1424-Algoritma Pemrograman.docx" },
+      { "code": "IF1524", "name": "Bahasa Inggris", "file": "Semester 1/IF1524/IF1524-Bahasa Inggris.docx" },
+      { "code": "IF1624", "name": "Jaringan Komputer", "file": "Semester 1/IF1624/IF1624-Jaringan Komputer.docx" }
+    ]
+  },
+  {
+    "semester": "Semester 2",
+    "sem_num": 2,
+    "courses": [
+      { "code": "IF220124", "name": "Statistika", "file": "Semester 2/IF220124/IF220124-Statistika.docx" },
+      { "code": "IF220224", "name": "Aljabar Linear & Matrik", "file": "Semester 2/IF220224/IF220224-Aljabar Linear & Matrik.docx" },
+      { "code": "IF230324", "name": "Analisa Desain dan Sistem", "file": "Semester 2/IF230324/IF230324-Analisa Desain dan Sistem.docx" },
+      { "code": "IF230424", "name": "Riset Operasi", "file": "Semester 2/IF230424/IF230424-Riset Operasi.docx" },
+      { "code": "IF240624", "name": "Struktur Data", "file": "Semester 2/IF240624/IF240624-Struktur Data.docx" },
+      { "code": "IF260624", "name": "Sistem Informasi Bisnis", "file": "Semester 2/IF260624/IF260624-Sistem Informasi Bisnis.docx" },
+      { "code": "IF260724", "name": "Etika Profesi", "file": "Semester 2/IF260724/IF260724-Etika Profesi.docx" }
+    ]
+  },
+  {
+    "semester": "Semester 3",
+    "sem_num": 3,
+    "courses": [
+      { "code": "IF330124", "name": "Sistem Pendukung Keputusan", "file": "Semester 3/IF330124/IF330124-Sistem Pendukung Keputusan.docx" },
+      { "code": "IF340224", "name": "Pemrograman Java", "file": "Semester 3/IF340224/IF340224-Pemrograman Java.docx" },
+      { "code": "IF350324", "name": "Publik Speaking", "file": "Semester 3/IF350324/IF350324-Publik Speaking.docx" },
+      { "code": "IF360424", "name": "Konsep AI", "file": "Semester 3/IF360424/IF360424-Konsep AI.docx" },
+      { "code": "IF360524", "name": "Interaksi Manusia dan Komputer", "file": "Semester 3/IF360524/IF360524-Interaksi Manusia dan Komputer.docx" },
+      { "code": "IF360624", "name": "Manajemen Perangkat Lunak", "file": "Semester 3/IF360624/IF360624-Manajemen Perangkat Lunak.docx" }
+    ]
+  },
+  {
+    "semester": "Semester 4",
+    "sem_num": 4,
+    "courses": [
+      { "code": "IF430124", "name": "Rekayasa Perangkat Lunak", "file": "Semester 4/IF430124/IF430124-Rekayasa Perangkat Lunak.docx" },
+      { "code": "IF430224", "name": "Komputer Grafik", "file": "Semester 4/IF430224/IF430224-Komputer Grafik.docx" },
+      { "code": "IF430324", "name": "Sistem Operasi", "file": "Semester 4/IF430324/IF430324-Sistem Operasi.docx" },
+      { "code": "IF440424", "name": "Rangkaian Logika", "file": "Semester 4/IF440424/IF440424-Rangkaian Logika.docx" },
+      { "code": "IF440524", "name": "Basis Data Lanjut", "file": "Semester 4/IF440524/IF440524-Basis Data Lanjut.docx" },
+      { "code": "IF440624", "name": "Pemrograman Web", "file": "Semester 4/IF440624/IF440624-Pemrograman Web.docx" }
+    ]
+  },
+  {
+    "semester": "Semester 5",
+    "sem_num": 5,
+    "courses": [
+      { "code": "IF5302", "name": "Digital Image Processing", "file": "Semester 5/IF5302/IF5302-Digital Image Processing.docx" },
+      { "code": "IF5303", "name": "Statistik Teknik", "file": "Semester 5/IF5303/IF5303-Statistik Teknik.docx" },
+      { "code": "IF5504", "name": "Data Mining", "file": "Semester 5/IF5504/IF5504-Data Mining.docx" },
+      { "code": "IF5505", "name": "Publik Speaking", "file": "Semester 5/IF5505/IF5505-Publik Speaking.docx" },
+      { "code": "IF5506", "name": "Sistem Informasi Geografis", "file": "Semester 5/IF5506/IF5506-Sistem Informasi Geografis.docx" },
+      { "code": "IF5507", "name": "English for Daily Communication", "file": "Semester 5/IF5507/IF5507-English for Daily Communication.docx" },
+      { "code": "IF5801", "name": "Interfacing", "file": "Semester 5/IF5801/IF5801-Interfacing.docx" },
+      { "code": "IF5802", "name": "Keamanan Komputer", "file": "Semester 5/IF5802/IF5802-Keamanan Komputer.docx" },
+      { "code": "IF5803", "name": "Basis Data Terdistribusi", "file": "Semester 5/IF5803/IF5803-Basis Data Terdistribusi.docx" }
+    ]
+  },
+  {
+    "semester": "Semester 6",
+    "sem_num": 6,
+    "courses": [
+      { "code": "IF6403", "name": "Pemrograman Android", "file": "Semester 6/IF6403/IF6403-Pemrograman Android.docx" },
+      { "code": "IF6504", "name": "English For Publication", "file": "Semester 6/IF6504/IF6504-English For Publication.docx" },
+      { "code": "IF6506", "name": "Teknik Marketing", "file": "Semester 6/IF6506/IF6506-Teknik Marketing.docx" },
+      { "code": "IF6801", "name": "Teknologi Internet of Thing", "file": "Semester 6/IF6801/IF6801-Teknologi Internet of Thing.docx" },
+      { "code": "IF6802", "name": "Analisa Data Multivariat", "file": "Semester 6/IF6802/IF6802-Analisa Data Multivariat.docx" },
+      { "code": "IF6803", "name": "Digital Forensik", "file": "Semester 6/IF6803/IF6803-Digital Forensik.docx" },
+      { "code": "IF6804", "name": "Teknologi Wireless", "file": "Semester 6/IF6804/IF6804-Teknologi Wireless.docx" },
+      { "code": "IF6805", "name": "Big Data", "file": "Semester 6/IF6805/IF6805-Big Data.docx" },
+      { "code": "UNV6107", "name": "Pengenalan PGRI", "file": "Semester 6/UNV6107/UNV6107-Pengenalan PGRI.docx" },
+      { "code": "UNV6505", "name": "KKN", "file": "Semester 6/UNV6505/UNV6505-KKN.docx" }
+    ]
+  },
+  {
+    "semester": "Semester 7",
+    "sem_num": 7,
+    "courses": [
+      { "code": "IF7601", "name": "Manajemen Perangkat Lunak", "file": "Semester 7/IF7601/IF7601-Manajemen Perangkat Lunak.docx" },
+      { "code": "IF7602", "name": "Interaksi Manusia dan Komputer", "file": "Semester 7/IF7602/IF7602-Interaksi Manusia dan Komputer.docx" },
+      { "code": "IF7603", "name": "Sistem Informasi Bisnis", "file": "Semester 7/IF7603/IF7603-Sistem Informasi Bisnis.docx" },
+      { "code": "IF7604", "name": "Etika Profesi", "file": "Semester 7/IF7604/IF7604-Etika Profesi.docx" },
+      { "code": "IF7605", "name": "Perancangan dan Pengembangan Produk", "file": "Semester 7/IF7605/IF7605-Perancangan dan Pengembangan Produk.docx" },
+      { "code": "IF7606", "name": "Kerja Praktek", "file": "Semester 7/IF7606/IF7606-Kerja Praktek.docx" },
+      { "code": "IF7607", "name": "Digital Enterpreneurship", "file": "Semester 7/IF7607/IF7607-Digital Enterpreneurship.docx" }
+    ]
+  },
+  {
+    "semester": "Semester 8",
+    "sem_num": 8,
+    "courses": [
+      { "code": "IF8701", "name": "Seminar", "file": "Semester 8/IF8701/IF8701-Seminar.docx" },
+      { "code": "IF8702", "name": "Skripsi", "file": "Semester 8/IF8702/IF8702-Skripsi.docx" },
+      { "code": "IF8703", "name": "Publikasi", "file": "Semester 8/IF8703/IF8703-Publikasi.docx" }
+    ]
+  }
+];
+
+        let currentSemesterFilter = 'all';
+        let searchQuery = '';
+
+        function initTabs() {
+            const tabsContainer = document.getElementById('semesterTabs');
+            semestersData.forEach(sem => {
+                const btn = document.createElement('button');
+                btn.onclick = () => filterSemester(sem.sem_num);
+                btn.className = `sem-btn sem-btn-${sem.sem_num} px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700`;
+                btn.innerText = sem.semester;
+                tabsContainer.appendChild(btn);
+            });
+        }
+
+        function filterSemester(semNum) {
+            currentSemesterFilter = semNum;
+            document.querySelectorAll('.sem-btn').forEach(btn => {
+                btn.className = 'sem-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700';
+            });
+            
+            if (semNum === 'all') {
+                document.querySelector('#semesterTabs button').className = 'sem-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-sky-500 text-white shadow-lg shadow-sky-500/25';
+            } else {
+                const activeBtn = document.querySelector(`.sem-btn-${semNum}`);
+                if (activeBtn) {
+                    activeBtn.className = 'sem-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-sky-500 text-white shadow-lg shadow-sky-500/25';
+                }
+            }
+            renderCourses();
+        }
+
+        function renderCourses() {
+            const grid = document.getElementById('coursesGrid');
+            const noResults = document.getElementById('noResults');
+            grid.innerHTML = '';
+
+            let allCourses = [];
+            let totalCount = 0;
+
+            semestersData.forEach(sem => {
+                totalCount += sem.courses.length;
+                if (currentSemesterFilter === 'all' || currentSemesterFilter === sem.sem_num) {
+                    sem.courses.forEach(course => {
+                        allCourses.push({
+                            ...course,
+                            semester: sem.semester,
+                            sem_num: sem.sem_num
+                        });
+                    });
+                }
+            });
+
+            document.getElementById('totalCoursesCount').innerText = totalCount;
+
+            const filtered = allCourses.filter(c => {
+                const q = searchQuery.toLowerCase();
+                return c.code.toLowerCase().includes(q) || c.name.toLowerCase().includes(q) || c.semester.toLowerCase().includes(q);
+            });
+
+            if (filtered.length === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+                filtered.forEach(c => {
+                    const card = document.createElement('div');
+                    card.className = 'glass-card rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 group';
+                    card.innerHTML = `
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-3">
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20 font-mono">
+                                    ${c.code}
+                                </span>
+                                <span class="text-xs font-medium text-slate-400 bg-slate-800/80 px-2.5 py-0.5 rounded-full border border-slate-700/50">
+                                    ${c.semester}
+                                </span>
+                            </div>
+                            <h3 class="text-base font-bold text-white group-hover:text-sky-300 transition-colors line-clamp-2">
+                                ${c.name}
+                            </h3>
+                            <p class="text-xs text-slate-400 mt-2 flex items-center gap-1.5">
+                                <i data-lucide="file-text" class="w-3.5 h-3.5 text-slate-500"></i>
+                                Format OBE Unirow (.docx)
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <a href="${encodeURI(c.file)}" download class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white font-semibold text-xs transition-all shadow-md hover:shadow-sky-500/20">
+                                <i data-lucide="download" class="w-4 h-4"></i>
+                                Unduh RPS (.docx)
+                            </a>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+                lucide.createIcons();
+            }
+        }
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderCourses();
+        });
+
+        initTabs();
+        renderCourses();
+    </script>
+</body>
+</html>
